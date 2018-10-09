@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Plant" max_length="40" name="x_entg_seed_plant" type="collection">
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Planted By" max_length="32" name="planted_by" reference="sys_user" type="reference"/>
+        <element choice="1" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Acacia" sequence="1" value="acacia"/>
+                <element inactive_on_update="false" label="Aspen" sequence="2" value="aspen"/>
+                <element inactive_on_update="false" label="Birch" sequence="3" value="birch"/>
+                <element inactive_on_update="false" label="Maple" sequence="5" value="maple"/>
+                <element inactive_on_update="false" label="Pine" sequence="6" value="pine"/>
+                <element inactive_on_update="false" label="Redwood" sequence="7" value="redwood"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="planted_by"/>
+        </index>
+    </element>
+</database>
